@@ -16,7 +16,7 @@ joint3_position:
   type: position_controllers/JointPositionController
   joint: joint3
 
-joint4_position:
+joint4_position: 
   type: position_controllers/JointPositionController
   joint: joint4
 
