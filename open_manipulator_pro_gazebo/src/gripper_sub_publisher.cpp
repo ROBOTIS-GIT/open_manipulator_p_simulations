@@ -28,7 +28,7 @@ void gripperJointCallback(const std_msgs::Float64::ConstPtr& msg)
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "gripper_sub_publisher");
+  ros::init(argc, argv, "pro_gripper_sub_publisher");
   ros::NodeHandle node_handle("");
 
   ros::Subscriber gripper_joint_sub = node_handle.subscribe("gripper_position/command", 10, gripperJointCallback);
