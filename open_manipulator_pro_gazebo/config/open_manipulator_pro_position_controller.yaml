@@ -7,31 +7,29 @@ joint_state_controller:
 joint1_position:
   type: position_controllers/JointPositionController
   joint: joint1
+  pid: {p: 9000.0, i: 0.1, d: 500.0}
 
 joint2_position:
   type: position_controllers/JointPositionController
   joint: joint2
+  pid: {p: 9000.0, i: 0.1, d: 500.0}
 
 joint3_position:
   type: position_controllers/JointPositionController
   joint: joint3
+  pid: {p: 9000.0, i: 0.1, d: 500.0}
 
 joint4_position: 
   type: position_controllers/JointPositionController
   joint: joint4
+  pid: {p: 9000.0, i: 0.1, d: 500.0}
 
 joint5_position:
   type: position_controllers/JointPositionController
   joint: joint5
+  pid: {p: 9000.0, i: 0.1, d: 500.0}
 
 joint6_position:
   type: position_controllers/JointPositionController
   joint: joint6
-
-# gripper_position:
-#   type: position_controllers/JointPositionController
-#   joint: gripper
-
-# gripper_sub_position:
-#   type: position_controllers/JointPositionController
-#   joint: gripper_sub
+  pid: {p: 9000.0, i: 0.1, d: 500.0}
