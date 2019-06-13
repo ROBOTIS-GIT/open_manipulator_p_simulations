@@ -34,12 +34,12 @@ joint6_position:
   joint: joint6
   pid: {p: 6000.0, i: 0.1, d: 400.0}
 
-grip_position:
+gripper_position:
   type: position_controllers/JointPositionController
-  joint: grip
+  joint: gripper
   pid: {p: 6000.0, i: 0.1, d: 400.0}
 
-grip_1_position:
+gripper_sub_position:
   type: position_controllers/JointPositionController
-  joint: grip_1
+  joint: gripper_sub
   pid: {p: 6000.0, i: 0.1, d: 400.0}
