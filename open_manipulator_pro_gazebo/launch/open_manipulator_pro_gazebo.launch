@@ -1,7 +1,7 @@
 <launch>
   <!-- These are the arguments you can pass this launch file, for example paused:=true -->
   <arg name="with_gripper" default="false"/>
-  <arg name="use_robot_name" default="open_manipulator"
+  <arg name="use_robot_name" default="open_manipulator_pro"
        doc="Must match the robotNamespace tag in the gazebo description file"/>
   <arg name="paused" default="true"/>
   <arg name="use_sim_time" default="true"/>
@@ -31,7 +31,7 @@
 
   <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-        args="-urdf -model open_manipulator -z 0.0 -param robot_description"/>
+        args="-urdf -model open_manipulator_pro -z 0.0 -param robot_description"/>
 
   <!-- ros_control robotis manipulator launch file -->
   <group if="$(arg with_gripper)">
