@@ -1,8 +1,8 @@
 <launch>
-  <arg name="use_robot_name"         default="open_manipulator_pro"/>
+  <arg name="use_robot_name"         default="open_manipulator_p"/>
 
   <!-- Load joint controller configurations from YAML file to parameter server -->
-  <rosparam file="$(find open_manipulator_pro_gazebo)/config/open_manipulator_pro_position_controller.yaml" command="load"
+  <rosparam file="$(find open_manipulator_p_gazebo)/config/open_manipulator_p_position_controller.yaml" command="load"
             ns="$(arg use_robot_name)"/>
 
   <!-- load the controllers -->

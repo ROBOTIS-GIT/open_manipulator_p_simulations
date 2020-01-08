@@ -1,8 +1,8 @@
 <launch>
-  <arg name="use_robot_name"         default="open_manipulator_pro"/>
+  <arg name="use_robot_name"         default="open_manipulator_p"/>
 
   <!-- Load joint controller configurations from YAML file to parameter server -->
-  <rosparam file="$(find open_manipulator_pro_gazebo)/config/open_manipulator_pro_position_controller_with_gripper.yaml" command="load"
+  <rosparam file="$(find open_manipulator_p_gazebo)/config/open_manipulator_p_position_controller_with_gripper.yaml" command="load"
             ns="$(arg use_robot_name)"/>
             
   <!-- load the controllers -->
@@ -18,6 +18,6 @@
 																							 gripper_sub_position"/>
 
   <!-- Run gripper sub position publisher -->
-  <node name="gripper_sub_publisher" pkg="open_manipulator_pro_gazebo" type="gripper_sub_publisher" output="screen" ns="$(arg use_robot_name)"/>
+  <node name="gripper_sub_publisher" pkg="open_manipulator_p_gazebo" type="gripper_sub_publisher" output="screen" ns="$(arg use_robot_name)"/>
 
 </launch>
