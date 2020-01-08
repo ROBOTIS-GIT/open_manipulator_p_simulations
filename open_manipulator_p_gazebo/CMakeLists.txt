@@ -2,7 +2,7 @@
 # Set minimum required version of cmake, project name and compile options
 ################################################################################
 cmake_minimum_required(VERSION 2.8.3)
-project(open_manipulator_pro_gazebo)
+project(open_manipulator_p_gazebo)
 
 add_compile_options(-std=c++11)
 
