@@ -13,7 +13,7 @@
   </include>
 
   <!-- Load the URDF into the ROS Parameter Server -->
-  <include file="$(find open_manipulator_p_description)/launch/open_manipulator_p_upload.launch"/>
+  <include file="$(find open_manipulator_p_description)/launch/open_manipulator_p_with_gripper_upload.launch"/>
 
   <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
@@ -23,5 +23,6 @@
   <include file="$(find open_manipulator_p_gazebo)/launch/controller_utils.launch"/>
 
   <!-- ros_control robotis manipulator launch file -->
-  <include file="$(find open_manipulator_p_gazebo)/launch/open_manipulator_p_controller.launch"/>
+  <include file="$(find open_manipulator_p_gazebo)/launch/open_manipulator_p_with_gripper_controller.launch"/>
+
 </launch>
