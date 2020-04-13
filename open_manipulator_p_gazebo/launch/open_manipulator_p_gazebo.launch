@@ -3,6 +3,7 @@
   <arg name="gui" default="true"/>
   <arg name="paused" default="true"/>
   <arg name="use_sim_time" default="true"/>
+  <arg name="with_gripper" default="false"/>
 
   <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -13,15 +14,19 @@
   </include>
 
   <!-- Load the URDF into the ROS Parameter Server -->
-  <include file="$(find open_manipulator_p_description)/launch/open_manipulator_p_upload.launch"/>
+  <include file="$(find open_manipulator_p_description)/launch/open_manipulator_p_upload.launch">
+    <arg name="with_gripper" value="$(arg with_gripper)"/>
+  </include>
 
   <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-        args="-urdf -model robot -z 0.0 -param robot_description"/>
+    args="-urdf -model robot -z 0.0 -param robot_description"/>
 
   <!-- Run controller utils -->
   <include file="$(find open_manipulator_p_gazebo)/launch/controller_utils.launch"/>
 
   <!-- ros_control robotis manipulator launch file -->
-  <include file="$(find open_manipulator_p_gazebo)/launch/open_manipulator_p_controller.launch"/>
+  <include file="$(find open_manipulator_p_gazebo)/launch/open_manipulator_p_controller.launch">
+    <arg name="with_gripper" value="$(arg with_gripper)"/>
+  </include>
 </launch>
