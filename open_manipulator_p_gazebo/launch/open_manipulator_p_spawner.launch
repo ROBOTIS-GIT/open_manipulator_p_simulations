@@ -1,0 +1,16 @@
+<launch>
+  <!-- These are the arguments you can pass this launch file, for example paused:=true -->
+  <arg name="with_gripper" default="false"/>
+
+  <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-urdf -model robot -z 0.0 -param robot_description"/>
+
+  <!-- Run controller utils -->
+  <include file="$(find open_manipulator_p_gazebo)/launch/controller_utils.launch"/>
+
+  <!-- ros_control robotis manipulator launch file -->
+  <include file="$(find open_manipulator_p_gazebo)/launch/open_manipulator_p_controller.launch">
+    <arg name="with_gripper" value="$(arg with_gripper)"/>
+  </include>
+</launch>
