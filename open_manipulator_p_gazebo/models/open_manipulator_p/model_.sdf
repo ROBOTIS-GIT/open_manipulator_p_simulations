@@ -1,0 +1,364 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="open_manipulator_p">
+  <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+
+    <link name="world"/>
+
+    <!-- link 1 -->
+    <link name="link1">
+      <pose relative_to="world_fixed">0 0 0 0 -0 0</pose>
+      <visual name="link1_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://open_manipulator_p/meshes/link1.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>grey</material>
+      </visual>
+
+      <collision name="link1_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.001 0.001 0.001</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>9.4360595e-01</mass>
+        <inertia>
+          <ixx>1.0e-03</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyx>0.0</iyx>
+          <iyy>1.0e-03</iyy>
+          <iyz>0.0</iyz>
+          <izx>0.0</izx>
+          <izy>0.0</izy>
+          <izz>1.0e-03</izz>
+        </inertia>
+      </inertial>
+    </link>
+
+    <!-- link 2 -->
+    <link name="link2">
+      <pose relative_to="joint1">0 0 0 0 -0 0</pose>
+      <visual name="link2_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://open_manipulator_p/meshes/link2.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>grey</material>
+      </visual>
+
+      <collision name="link2_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.001 0.001 0.001</size>
+          </box>
+        </geometry>
+      </collision>
+      
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>9.4360595e-01</mass>
+        <inertia>
+          <ixx>1.5694005e-03</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyx>0.0</iyx>
+          <iyy>4.5593385e-04</iyy>
+          <iyz>6.4581824e-09</iyz>
+          <izx>0.0</izx>
+          <izy>6.4581824e-09</izy>
+          <izz>1.5561809e-03</izz>
+        </inertia>
+      </inertial>
+    </link>
+
+    <!-- link 3 -->
+    <link name="link3">
+      <pose relative_to="joint2">0 0 0 0 -0 0</pose>
+      <visual name="link3_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://open_manipulator_p/meshes/link3.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>grey</material>
+      </visual>
+
+      <collision name="link3_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.001 0.001 0.001</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>1.3825862e+00</mass>
+        <inertia>
+          <ixx>6.7630430e-02</ixx>
+          <ixy>-1.9988597e-05</ixy>
+          <ixz>-5.7477571e-03</ixz>
+          <iyx>-1.9988597e-05</iyx>
+          <iyy>6.7208001e-024</iyy>
+          <iyz>7.4823203e-05</iyz>
+          <izx>-5.7477571e-03</izx>
+          <izy>7.4823203e-05</izy>
+          <izz>2.6031353e-03</izz>
+        </inertia>
+      </inertial>
+    </link>
+
+    <!-- link 4 -->
+    <link name="link4">
+      <pose relative_to="joint3">0 0 0 0 -0 0</pose>
+      <visual name="link4_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://open_manipulator_p/meshes/link4.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>grey</material>
+      </visual>
+
+      <collision name="link4_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.001 0.001 0.001</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>1.2126965e+00</mass>
+        <inertia>
+          <ixx>1.7985424e-01</ixx>
+          <ixy>-9.9417476e-07</ixy>
+          <ixz>-8.1564441e-053</ixz>
+          <iyx>-9.9417476e-07</iyx>
+          <iyy>1.7948679e-01</iyy>
+          <iyz>-1.7705853e-05</iyz>
+          <izx>-8.1564441e-05</izx>
+          <izy>-1.7705853e-05</izy>
+          <izz>1.1422079e-03</izz>
+        </inertia>
+      </inertial>
+    </link>
+
+    <!-- link 5 -->
+    <link name="link5">
+      <pose relative_to="joint4">0 0 0 0 -0 0</pose>
+      <visual name="link5_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://open_manipulator_p/meshes/link5.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>grey</material>
+      </visual>
+
+      <collision name="link5_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.001 0.001 0.001</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>4.6635550e-01</mass>
+        <inertia>
+          <ixx>1.2357713e-01</ixx>
+          <ixy>-1.9465317e-09</ixy>
+          <ixz>5.1228604e-07</ixz>
+          <iyx>-1.9465317e-09</iyx>
+          <iyy>1.2339567e-01</iyy>
+          <iyz>5.3769657e-04</iyz>
+          <izx>5.1228604e-07</izx>
+          <izy>5.3769657e-04</izy>
+          <izz>3.3216863e-04</izz>
+        </inertia>
+      </inertial>
+    </link>
+
+    <!-- link 6 -->
+    <link name="link6">
+      <pose relative_to="joint5">0 0 0 0 -0 0</pose>
+      <visual name="link6_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://open_manipulator_p/meshes/link6.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>grey</material>
+      </visual>
+
+      <collision name="link6_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.001 0.001 0.001</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>4.2561606e-01</mass>
+        <inertia>
+          <ixx>1.4881319e-01</ixx>
+          <ixy>0.0000000e+00</ixy>
+          <ixz>5.3435266e-07</ixz>
+          <iyx>0.0000000e+00</iyx>
+          <iyy>1.4872708e-01</iyy>
+          <iyz>-4.3708754e-05</iyz>
+          <izx>5.3435266e-07</izx>
+          <izy>-4.3708754e-05</izy>
+          <izz>2.1040082e-04</izz>
+        </inertia>
+      </inertial>
+    </link>
+
+    <!-- end link -->
+    <link name="end_link">
+      <pose relative_to="joint6">0 0 0 0 -0 0</pose>
+      <visual name="end_link_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://open_manipulator_p/meshes/end_link.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>grey</material>
+      </visual>
+
+      <collision name="end_link_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.001 0.001 0.001</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.01919</mass>
+        <inertia>
+          <ixx>1.25e-4</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>1.25e-4</iyy>
+          <iyz>0.0</iyz>
+          <izz>1.25e-4</izz>
+        </inertia>
+      </inertial>
+    </link>
+
+    <!-- World fixed joint-->
+    <joint name="world_fixed" type="fixed">
+      <pose>0 0 0 0 0 0</pose>
+      <parent>world</parent>
+      <child>link1</child>
+    </joint>
+
+    <!-- Joint 1 -->
+    <joint name="joint1" type="revolute">
+      <parent>link1</parent>
+      <child>link2</child>
+      <pose>0.0 0.0 0.126 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+      <limit velocity="6.5" effort="1000" lower="-1.57" upper="1.57" />
+      <dynamics damping="0.7"/>
+    </joint>
+
+    <!-- Joint 2 -->
+    <joint name="joint2" type="revolute">
+      <parent>link2</parent>
+      <child>link3</child>
+      <pose>0.0 0.069 0.033 0 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+      <limit velocity="6.5" effort="1000" lower="-1.57" upper="1.57" />
+      <dynamics damping="0.7"/>
+    </joint>
+
+    <!-- Joint 3 -->
+    <joint name="joint3" type="revolute">
+      <parent>link3</parent>
+      <child>link4</child>
+      <pose>0.03000 -0.01150 0.26400 0 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+      <limit velocity="6.5" effort="1000" lower="-1.57" upper="1.57" />
+      <dynamics damping="0.7"/>
+    </joint>
+
+    <!-- Joint 4 -->
+    <joint name="joint4" type="revolute">
+      <parent>link4</parent>
+      <child>link5</child>
+      <pose>0.19500 -0.05750 0.03000 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+      </axis>
+      <limit velocity="6.5" effort="1000" lower="-1.57" upper="1.57" />
+      <dynamics damping="0.7"/>
+    </joint>
+
+    <!-- Joint 5 -->
+    <joint name="joint5" type="revolute">
+      <parent>link5</parent>
+      <child>link6</child>
+      <pose>0.06300 0.04500 0.00000 0 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+      <limit velocity="6.5" effort="1000" lower="-1.57" upper="1.57" />
+      <dynamics damping="0.7"/>
+    </joint>
+
+    <!-- Joint 6 -->
+    <joint name="joint6" type="revolute">
+      <parent>link6</parent>
+      <child>end_link</child>
+      <pose>0.12300 -0.04500 0.00000 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+      </axis>
+      <limit velocity="6.5" effort="1000" lower="-1.57" upper="1.57" />
+      <dynamics damping="0.7"/>
+    </joint>
+  </model>
+</sdf>

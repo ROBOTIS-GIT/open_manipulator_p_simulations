@@ -1,0 +1,495 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <model name="open_manipulator_p">
+  <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+
+    <link name="world"/>
+
+    <joint name="world_fixed" type="fixed">
+      <pose relative_to="world">0 0 0 0 -0 0</pose>
+      <parent>world</parent>
+      <child>link1</child>
+    </joint>
+
+    <link name="link1">
+      <pose relative_to="world_fixed">0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 -0.000177 -0.001003 0 -0 0</pose>
+        <mass>0.943606</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name="link1_collision">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.001 0.001 0.001</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>30</mu>
+              <mu2>30</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="link1_visual">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://open_manipulator_p/meshes/link1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>grey</material>
+      </visual>
+    </link>
+
+    <joint name="joint1" type="revolute">
+      <pose relative_to="link1">0 0 0.126 0 -0 0</pose>
+      <parent>link1</parent>
+      <child>link2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>6.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name="link2">
+      <pose relative_to="joint1">0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 -0.000177 -0.001003 0 -0 0</pose>
+        <mass>0.943606</mass>
+        <inertia>
+          <ixx>0.0015694</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000455934</iyy>
+          <iyz>6.45818e-09</iyz>
+          <izz>0.00155618</izz>
+        </inertia>
+      </inertial>
+      <collision name="link2_collision">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.001 0.001 0.001</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>30</mu>
+              <mu2>30</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="link2_visual">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://open_manipulator_p/meshes/link2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>grey</material>
+      </visual>
+    </link>
+
+    <joint name="joint2" type="revolute">
+      <pose relative_to="link2">0 0.069 0.033 0 -0 0</pose>
+      <parent>link2</parent>
+      <child>link3</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>6.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name="link3">
+      <pose relative_to="joint2">0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.015752 -0.000221 0.199137 0 -0 0</pose>
+        <mass>1.38259</mass>
+        <inertia>
+          <ixx>0.0676304</ixx>
+          <ixy>-1.99886e-05</ixy>
+          <ixz>-0.00574776</ixz>
+          <iyy>0.067208</iyy>
+          <iyz>7.48232e-05</iyz>
+          <izz>0.00260314</izz>
+        </inertia>
+      </inertial>
+      <collision name="link3_collision">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.001 0.001 0.001</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>30</mu>
+              <mu2>30</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="link3_visual">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://open_manipulator_p/meshes/link3.stl</uri>
+          </mesh>
+        </geometry>
+        <material>grey</material>
+      </visual>
+    </link>
+
+    <joint name="joint3" type="revolute">
+      <pose relative_to="link3">0.03 -0.0115 0.264 0 -0 0</pose>
+      <parent>link3</parent>
+      <child>link4</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>6.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name="link4">
+      <pose relative_to="joint3">0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.000304 4.2e-05 0.380747 0 -0 0</pose>
+        <mass>1.2127</mass>
+        <inertia>
+          <ixx>0.179854</ixx>
+          <ixy>-9.94175e-07</ixy>
+          <ixz>-8.15644e-05</ixz>
+          <iyy>0.179487</iyy>
+          <iyz>-1.77059e-05</iyz>
+          <izz>0.00114221</izz>
+        </inertia>
+      </inertial>
+      <collision name="link4_collision">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.001 0.001 0.001</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>30</mu>
+              <mu2>30</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="link4_visual">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://open_manipulator_p/meshes/link4.stl</uri>
+          </mesh>
+        </geometry>
+        <material>grey</material>
+      </visual>
+    </link>
+
+    <joint name="joint4" type="revolute">
+      <pose relative_to="link4">0.195 -0.0575 0.03 0 -0 0</pose>
+      <parent>link4</parent>
+      <child>link5</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>6.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name="link5">
+      <pose relative_to="joint4">0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-2e-06 -0.002229 0.513872 0 -0 0</pose>
+        <mass>0.466355</mass>
+        <inertia>
+          <ixx>0.123577</ixx>
+          <ixy>-1.94653e-09</ixy>
+          <ixz>5.12286e-07</ixz>
+          <iyy>0.123396</iyy>
+          <iyz>0.000537697</iyz>
+          <izz>0.000332169</izz>
+        </inertia>
+      </inertial>
+      <collision name="link5_collision">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.001 0.001 0.001</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>30</mu>
+              <mu2>30</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="link5_visual">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://open_manipulator_p/meshes/link5.stl</uri>
+          </mesh>
+        </geometry>
+        <material>grey</material>
+      </visual>
+    </link>
+
+    <joint name="joint5" type="revolute">
+      <pose relative_to="link5">0.063 0.045 0 0 -0 0</pose>
+      <parent>link5</parent>
+      <child>link6</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>6.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name="link6">
+      <pose relative_to="joint5">0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-2e-06 0.00018 0.590283 0 -0 0</pose>
+        <mass>0.425616</mass>
+        <inertia>
+          <ixx>0.148813</ixx>
+          <ixy>0</ixy>
+          <ixz>5.34353e-07</ixz>
+          <iyy>0.148727</iyy>
+          <iyz>-4.37088e-05</iyz>
+          <izz>0.000210401</izz>
+        </inertia>
+      </inertial>
+      <collision name="link6_collision">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.001 0.001 0.001</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>30</mu>
+              <mu2>30</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="link6_visual">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://open_manipulator_p/meshes/link6.stl</uri>
+          </mesh>
+        </geometry>
+        <material>grey</material>
+      </visual>
+    </link>
+
+    <joint name="joint6" type="revolute">
+      <pose relative_to="link6">0.123 -0.045 0 0 -0 0</pose>
+      <parent>link6</parent>
+      <child>end_link</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>1.5708</upper>
+          <effort>1000</effort>
+          <velocity>6.5</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.7</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name="end_link">
+      <pose relative_to="joint6">0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.00337 0 0 0 -0 0</pose>
+        <mass>0.01919</mass>
+        <inertia>
+          <ixx>0.000125</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000125</iyy>
+          <iyz>0</iyz>
+          <izz>0.000125</izz>
+        </inertia>
+      </inertial>
+      <collision name="end_link_collision">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.001 0.001 0.001</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>30</mu>
+              <mu2>30</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="end_link_visual">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://open_manipulator_p/meshes/end_link.stl</uri>
+          </mesh>
+        </geometry>
+        <material>grey</material>
+      </visual>
+    </link>
+
+    <static>0</static>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </model>
+</sdf>
